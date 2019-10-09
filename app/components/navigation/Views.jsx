@@ -1,11 +1,18 @@
 import { Route, Switch } from 'react-router-dom'
+import ChatPage from '../chat/ChatPage'
 
-const Views = () =>{
+
+
+const Views = ({height}) => {
+    const ChatWithHeight = () => {
+        return <ChatPage height={height * 0.8} />
+    }
+
     return (
         <Switch>
-        {/* <Route exact path="/" component={Dummy}></Route>
-        <RoleRoute exact path="/chat"  component={StatusPage}></RoleRoute> */}
-    </Switch>
+            <Route exact path="/" component={ChatWithHeight}></Route>
+            <Route exact path="/chat" component={ChatPage}></Route>
+        </Switch>
     )
 }
 

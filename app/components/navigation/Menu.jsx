@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom';
 import { selectRoute } from '../../actions/routeActions'
+import { useRef, useLayoutEffect } from 'react'
 
 const mapStateToProps = (state) => {
     return {
@@ -9,15 +10,20 @@ const mapStateToProps = (state) => {
     }
 }
 
-const Menu = ({ routes, dispatch, history }) => {
-
+const Menu = ({ routes, dispatch, history, resizeCallBack }) => {
     const handleSelect = (item) => {
         history.push(item.path)
         dispatch(selectRoute(item, routes))
     }
-
+    const navRef = useRef()
+    useLayoutEffect(() => {
+        return () => {
+            resizeCallBack(navRef.current.clientHeight)
+        }
+    })
     return (
-        <nav>
+        <nav ref={navRef}>
+
             <div className="nav-wrapper">
                 <ul>
                     {routes.map(item => {

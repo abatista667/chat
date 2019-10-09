@@ -1,0 +1,11 @@
+
+.container{
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.chat-msg-list{
+    border:solid 1px;
+    width: 100%;
+    position: absolute
+}
