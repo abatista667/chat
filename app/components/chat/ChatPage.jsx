@@ -3,33 +3,32 @@ import { connect } from 'react-redux'
 import { useState, useEffect, useRef } from 'react'
 
 
-let InputChat = () => {
-    return <div>
-        <textarea>
+let InputChat = ({ height }) => {
+    return <div className="row">
+        <div className="col s10" style={{ height: height + 'px' }}>
+            <textarea>
 
-        </textarea>
-        <button>Send</button>
+            </textarea>
+        </div>
+        <div className="col s2">
+            <button>Send</button>
+        </div>
     </div>
+
 }
 
-let ListChat = ({height}) => {
+let ListChat = ({ height }) => {
     return (
-        <div className="chat-msg-list" style={{ height:height +'px' }}>
+        <div className="chat-msg-list" style={{ height: height + 'px' }}>
             {window.innerHeight}
         </div>
     )
 }
 
 const ChatPage = (props) => {
-    const [height, setHeight] = useState(100)
-
-    useEffect(() => {
-        setHeight(props.height)
-    }, [props.height])
-
     return <div className="chatPage">
-        <ListChat height={height} />
-        <InputChat  />
+        <ListChat height={props.height * 0.8} />
+        <InputChat height={props.height * 0.2} />
     </div>
 }
 

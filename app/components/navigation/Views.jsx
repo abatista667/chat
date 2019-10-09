@@ -5,7 +5,7 @@ import ChatPage from '../chat/ChatPage'
 
 const Views = ({height}) => {
     const ChatWithHeight = () => {
-        return <ChatPage height={height * 0.8} />
+        return <ChatPage height={height} />
     }
 
     return (

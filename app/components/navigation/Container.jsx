@@ -8,9 +8,9 @@ const Container = () => {
     const [width, height] = useWindowSize()
     const [viewHeight, setViewHeight] = useState(0)
 
-    const menuResizeHandler = (size) =>{
-        let newHeight = height - size;
-        setViewHeight(newHeight)
+
+    const menuResizeHandler = (menuHeight) =>{
+        setViewHeight(height - menuHeight  )
     }
 
     return (
