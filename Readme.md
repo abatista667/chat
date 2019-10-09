@@ -1,3 +1,3 @@
-##Chat
+# chat
 
-Simple chat application using node/socket.io/react/redux
+A simple node/react/redux responsive chat using socket.io
