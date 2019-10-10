@@ -8,6 +8,7 @@ app.get('/', function(req, res){
 
 app.use('/dist',express.static(__dirname + '/dist'));
 app.use('/css',express.static(__dirname + '/css'));
+app.use('/images',express.static(__dirname + '/images'));
 
 http.listen(3000, function(){
   console.log('listening on *:3000');

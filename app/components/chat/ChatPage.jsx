@@ -4,14 +4,14 @@ import { useState, useEffect, useRef } from 'react'
 
 
 let InputChat = ({ height }) => {
-    return <div className="row">
-        <div className="col s10" style={{ height: height + 'px' }}>
+    return <div className="row"  style={{ height: height + 'px' }}>
+        <div className="col s10">
             <textarea>
 
             </textarea>
         </div>
-        <div className="col s2">
-            <button>Send</button>
+        <div className="col s2 fill-height middle-content">
+            <img className="send-button" src="images/send-button.png" />
         </div>
     </div>
 
@@ -26,9 +26,10 @@ let ListChat = ({ height }) => {
 }
 
 const ChatPage = (props) => {
+    const inputHeight = 40;
     return <div className="chatPage">
-        <ListChat height={props.height * 0.8} />
-        <InputChat height={props.height * 0.2} />
+        <ListChat height={props.height - inputHeight -1} />
+        <InputChat height={inputHeight} />
     </div>
 }
 
