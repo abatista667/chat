@@ -12,19 +12,20 @@ const InputChat = ({ height }) => {
         setMessage(event.target.value)
     }
 
-    const handleSendMessageClick =()=>{
+    const handleSendMessage =()=>{
         dispatch(sendMessage(message, "fulano"))
         setMessage("")
     }
 
     return <div className="row" style={{ height: height + 'px' }}>
         <div className="col s10">
-            <Textarea onChange={handleMessageChange} 
+            <Textarea name="chat-input"
+                      onChange={handleMessageChange} 
                       defaultValue={message} 
-                      onEnterPress={handleSendMessageClick} />
+                      onEnterPress={handleSendMessage} />
         </div>
         <div className="col s2 fill-height middle-content">
-            <img onClick={handleSendMessageClick} title="Send message"
+            <img onClick={handleSendMessage} title="Send message"
                  className="send-button" src="images/send-button.png" />
         </div>
     </div>

@@ -17,14 +17,16 @@
     margin-bottom: 0px;
 }
 
-textarea{
+#chat-input{
     height: 30px;
     border-radius: 50px;
     margin-top: 5px;
     padding-left: 20px;
-    background-color: white
+    background-color: white;
+    resize: none;
+    padding-top: 5px;
 }
-textarea:focus{
+#chat-input:focus{
     outline-width:0px;
 }
 
@@ -83,4 +85,18 @@ element.style {
 }
 .other-user-msg{
     margin-left: 30px;
+}
+
+[type="radio"]:not(:checked), [type="radio"]:checked {
+    position: unset;
+    opacity: 100;
+    pointer-events: fill
+}
+
+.setting-container{
+    max-width: 400px;
+}
+
+select {
+    display: block;
 }
