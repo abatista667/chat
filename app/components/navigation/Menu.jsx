@@ -1,16 +1,15 @@
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { withRouter } from 'react-router-dom';
 import { selectRoute } from '../../actions/routeActions'
+import { setMenuHeight } from '../../actions/actionCreators'
 import { useRef, useLayoutEffect } from 'react'
 
-const mapStateToProps = (state) => {
-    return {
-        routes: state.routes
-    }
-}
 
-const Menu = ({ routes, dispatch, history, resizeCallBack }) => {
+const Menu = ({ history }) => {
+    const dispatch = useDispatch();
+    const routes = useSelector(state => state.routes)
+
     const handleSelect = (item) => {
         history.push(item.path)
         dispatch(selectRoute(item, routes))
@@ -18,7 +17,7 @@ const Menu = ({ routes, dispatch, history, resizeCallBack }) => {
     const navRef = useRef()
     useLayoutEffect(() => {
         return () => {
-            resizeCallBack(navRef.current.clientHeight)
+            dispatch(setMenuHeight(navRef.current.clientHeight))
         }
     })
     return (
@@ -46,7 +45,6 @@ const MenuItem = (prop) => {
         </li>
 }
 
-const ConnectedMenu = withRouter(connect(mapStateToProps)(Menu))
 
-export default ConnectedMenu
-export { Menu }
+export default withRouter(Menu)
+export {Menu} 

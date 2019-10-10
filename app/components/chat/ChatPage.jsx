@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux'
-import { useState, useEffect, useRef } from 'react'
+import { useSelector } from 'react-redux'
 
 
 let InputChat = ({ height }) => {
@@ -25,10 +24,12 @@ let ListChat = ({ height }) => {
     )
 }
 
-const ChatPage = (props) => {
+const ChatPage = () => {
+    const height = useSelector(state => state.size.viewHeight)
     const inputHeight = 40;
+
     return <div className="chatPage">
-        <ListChat height={props.height - inputHeight -1} />
+        <ListChat height={height - inputHeight -1} />
         <InputChat height={inputHeight} />
     </div>
 }

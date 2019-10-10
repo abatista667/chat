@@ -1,23 +1,30 @@
 import { HashRouter } from 'react-router-dom'
 import Menu from './Menu'
 import Views from './Views'
+import { useSelector, useDispatch } from 'react-redux'
+import { useLayoutEffect } from 'react'
+import { setViewHeight } from '../../actions/actionCreators'
 import useWindowSize from '../../hooks/useWindowsSize';
-import {useState} from 'react'
 
 const Container = () => {
-    const [width, height] = useWindowSize()
-    const [viewHeight, setViewHeight] = useState(0)
+    const menuHeight = useSelector(state => state.size.menuHeight)
+    const dispatch = useDispatch()
+    const oldViewHeight = useSelector(state => state.size.viewHeight)
+    const [width, windowHeight] = useWindowSize()
 
+    useLayoutEffect(() => {
+        console.log(window.innerHeight)
+        const viewHeight = windowHeight - menuHeight - 1
 
-    const menuResizeHandler = (menuHeight) =>{
-        setViewHeight(height - menuHeight  )
-    }
+        if(oldViewHeight != viewHeight)
+        dispatch(setViewHeight(viewHeight))
+    })
 
     return (
         <HashRouter>
             <div className="container">
-                <Menu resizeCallBack={menuResizeHandler} />
-                <Views height={viewHeight} />
+                <Menu />
+                <Views />
             </div>
 
         </HashRouter>
