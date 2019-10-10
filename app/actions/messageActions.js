@@ -1,16 +1,21 @@
-import {AddMessage} from '../actions/actionCreators'
+import { AddMessage } from '../actions/actionCreators'
 import socketIOClient from "socket.io-client";
 const socket = socketIOClient()
 
 const sendMessage = (content, user) => {
-    socket.emit("chat message", { content, user, date: new Date() })
+    const date = new Date()
+    socket.emit("chat message", { content, user, date})
+    return (dispatch) => {
+        dispatch(AddMessage({content, user, date, isCurrentUser:true}))
+    }
+
 }
 const receiveMessage = () => {
-    return (dispatch) =>{
-        socket.on('chat message', function(message){
-            dispatch(AddMessage(message))
-          });
+    return (dispatch) => {
+        socket.on('chat message', function (message) {
+            dispatch(AddMessage({... message, isCurrentUser:false}))
+        });
     }
 }
 
-export {sendMessage, receiveMessage}
+export { sendMessage, receiveMessage }

@@ -1,18 +1,29 @@
-import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux'
-import { useRef, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { useRef, useEffect, useState } from 'react'
 import Message from './Message'
 import {sendMessage} from '../../actions/messageActions'
+import Textarea from '../common/TextArea'
 
 const InputChat = ({ height }) => {
+    const [message, setMessage] = useState("")
+    const dispatch = useDispatch()
+
+    const handleMessageChange = (event) =>{
+        setMessage(event.target.value)
+    }
+
+    const handleSendMessageClick =()=>{
+        dispatch(sendMessage(message, "fulano"))
+        setMessage("")
+    }
+
     return <div className="row" style={{ height: height + 'px' }}>
         <div className="col s10">
-            <textarea>
-
-            </textarea>
+            <Textarea onChange={handleMessageChange} defaultValue={message} />
         </div>
         <div className="col s2 fill-height middle-content">
-            <img onClick={()=> sendMessage("hola", "fulano")} className="send-button" src="images/send-button.png" />
+            <img onClick={handleSendMessageClick} title="Send message"
+                 className="send-button" src="images/send-button.png" />
         </div>
     </div>
 
@@ -28,7 +39,6 @@ const MessageArea = ({ height }) => {
 
     return (
         <div  className="chat-msg-list" style={{ height: height + 'px' }}>
-            {window.innerHeight}
             {messageList.map(message => <Message {...message} />)}
             <div ref={chatlistRef}></div>
         </div>
