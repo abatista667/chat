@@ -4,12 +4,17 @@ import thunk from 'redux-thunk'
 import mainReducer from './reducers/mainReducer'
 
 const routes = [
-    { key: 1, selected: true, path: '/', title: 'Settings' },
-    { key: 2, selected: false, path: '/chat', title: 'Chat' }
+    { key: 2, selected: true, path: '/chat', title: 'Chat' },
+    { key: 1, selected: false, path: '/', title: 'Settings' },
+]
+
+const chatList = [
+    {isCurrentUser:false, content:"hola como estas", user:"Fulano", time:""},
+    {isCurrentUser:true, content:"bien", user:"", time:""},
 ]
 
 const initialState = {
-    chat: "prueba",
+    chat: chatList,
     routes: routes
 }
 

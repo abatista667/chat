@@ -1,7 +1,8 @@
 import { 
     SET_ROUTE,
     SET_MENU_HEIGHT, 
-    SET_VIEW_HEIGHT
+    SET_VIEW_HEIGHT,
+    ADD_MESSAGE
 } from "../constant/actionTypes"
 
 const setRoute = (routes) => {
@@ -16,7 +17,12 @@ const setViewHeight = (clientHeight) =>{
     return {type :SET_VIEW_HEIGHT, payload: clientHeight}
 }
 
+const AddMessage = (message) =>{
+    return {type :ADD_MESSAGE, payload: message}
+}
 export { 
     setRoute, 
     setMenuHeight,
-    setViewHeight }
+    setViewHeight,
+    AddMessage
+ }

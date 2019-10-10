@@ -1,10 +1,10 @@
-
-const chat = (state = {}, action) => {
-    // switch(action.type){
-    //     case SET_LOGIN_SUCCESS:
-    //             state = action.payload
-    //         break;
-    // }
+import {ADD_MESSAGE} from '../constant/actionTypes'
+const chat = (state = [], action) => {
+    switch(action.type){
+        case ADD_MESSAGE:
+                state = state.concat([action.payload])
+            break;
+    }
     return state;
 }
 
