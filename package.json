@@ -10,7 +10,7 @@
   "description": "A simple chat application using node/react/redux/socket.io",
   "main": "server.js",
   "scripts": {
-    "start": "webpack --mode development && node server.js",
+    "start": "node server.js",
     "build": "webpack --mode production",
     "test": "jest"
   },
