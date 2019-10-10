@@ -45,3 +45,42 @@ element.style {
     width:35px;
     height: 36px;
 }
+
+.current-user-msg-container{
+    float: right;
+    display: inline-flex;
+    background-color: #aed581;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 3px;
+    border-radius: 10px;
+    margin-top: 3px;
+    margin-right: 10px;
+    box-shadow: -3px 3px 4px #888888;
+}
+
+
+.other-user-msg-container{
+    float: left;
+    display: inline-flex;
+    background-color: lightgray;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 10px;
+    margin-top: 3px;
+    margin-left: 10px;
+    box-shadow: 3px 3px 4px #888888;
+}
+.current-user-time{
+    font-size: xx-small
+}
+
+.current-user-msg{
+    margin-right: 30px;
+}
+.other-user-msg{
+    margin-left: 30px;
+}

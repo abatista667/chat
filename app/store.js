@@ -9,8 +9,8 @@ const routes = [
 ]
 
 const chatList = [
-    {isCurrentUser:false, content:"hola como estas", user:"Fulano", time:""},
-    {isCurrentUser:true, content:"bien", user:"", time:""},
+    {isCurrentUser:false, content:"hola como estas", user:"Fulano", time:new Date()},
+    {isCurrentUser:true, content:"bien", user:"", time:new Date()},
 ]
 
 const initialState = {

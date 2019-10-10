@@ -19,7 +19,9 @@ const InputChat = ({ height }) => {
 
     return <div className="row" style={{ height: height + 'px' }}>
         <div className="col s10">
-            <Textarea onChange={handleMessageChange} defaultValue={message} />
+            <Textarea onChange={handleMessageChange} 
+                      defaultValue={message} 
+                      onEnterPress={handleSendMessageClick} />
         </div>
         <div className="col s2 fill-height middle-content">
             <img onClick={handleSendMessageClick} title="Send message"
@@ -34,7 +36,7 @@ const MessageArea = ({ height }) => {
     const chatlistRef = useRef()
 
     useEffect(() => {
-         chatlistRef.current.scrollIntoView()
+         chatlistRef.current.scrollIntoView({behavior:"smooth"})
     })
 
     return (
