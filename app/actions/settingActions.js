@@ -2,7 +2,8 @@ import {
     setUsername,
     setTheme,
     setSendCTRLandEnter,
-    setClock
+    setClock,
+    setDefaultSettings
 } from './actionCreators'
 import {
     USERNAME,
@@ -63,4 +64,14 @@ const initializeSettings = () => {
     }
 }
 
-export { handleSettingsChange, initializeSettings }
+const clearSettings = () => {
+    localStorage.removeItem(USERNAME)
+    localStorage.removeItem(THEME)
+    localStorage.removeItem(CLOCK)
+    localStorage.removeItem(SEND_WITH_CTRL_AND_ENTER)
+    return (dispatch) => {
+        dispatch(setDefaultSettings())
+    }
+}
+
+export { handleSettingsChange, initializeSettings, clearSettings }

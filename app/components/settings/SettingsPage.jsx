@@ -1,8 +1,7 @@
 import Select from "../common/Select"
 import TextBox from '../common/TextBox'
 import { useSelector, useDispatch } from 'react-redux'
-import { handleSettingsChange } from '../../actions/settingActions'
-import { setDefaultSettings } from '../../actions/actionCreators'
+import { handleSettingsChange, clearSettings } from '../../actions/settingActions'
 import { themeDark, themeLight } from "../../constant/availableSettings"
 
 const SettingsPage = () => {
@@ -86,7 +85,7 @@ const SettingsPage = () => {
         </div>
         <div className="row">
             <div className="col s12">
-                <button onClick={() => dispatch(setDefaultSettings())} id="btn-reset"
+                <button onClick={() => dispatch(clearSettings())} id="btn-reset"
                     className="btn">Reset to default</button>
             </div>
         </div>
