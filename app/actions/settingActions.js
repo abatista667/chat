@@ -67,10 +67,7 @@ const initializeSettings = () => {
 }
 
 const clearSettings = () => {
-    localStorage.removeItem(USERNAME)
-    localStorage.removeItem(THEME)
-    localStorage.removeItem(CLOCK)
-    localStorage.removeItem(SEND_WITH_CTRL_AND_ENTER)
+    localStorage.clear()
     return (dispatch) => {
         dispatch(setDefaultSettings())
     }
