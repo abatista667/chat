@@ -13,13 +13,21 @@ const defaultSettings = {
     languageList,
     language,
     theme:themeLight,
-    sendCTRLandEnter:true
+    sendCTRLandEnter:true,
+    clock:24
 }
 
-
+const USERNAME = "username"
+const THEME ="theme"
+const CLOCK="clock"
+const SEND_WITH_CTRL_AND_ENTER="sendCTRLandEnter"
 
 export {
     defaultSettings,
     themeDark,
-    themeLight
+    themeLight,
+    USERNAME,
+    THEME,
+    CLOCK,
+    SEND_WITH_CTRL_AND_ENTER
 }

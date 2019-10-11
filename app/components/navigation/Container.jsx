@@ -19,9 +19,9 @@ const Container = () => {
         console.log(window.innerHeight)
         const viewHeight = windowHeight - menuHeight
 
-        if(oldViewHeight != viewHeight)
+        if(oldViewHeight != viewHeight && !isNaN(viewHeight))
         dispatch(setViewHeight(viewHeight))
-        ///synchronize with chat service
+
     })
        const css = "container "+theme
     return (

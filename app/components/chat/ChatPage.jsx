@@ -8,6 +8,7 @@ import Textarea from '../common/TextArea'
 const InputChat = ({ height }) => {
     const [message, setMessage] = useState("")
     const dispatch = useDispatch()
+    const sendCTRLandEnter = useSelector(state => state.settings.sendCTRLandEnter)
 
     const handleMessageChange = (event) =>{
         setMessage(event.target.value)
@@ -20,7 +21,7 @@ const InputChat = ({ height }) => {
     }
 
     const handleKeyDown = (e) => {
-        if(e.ctrlKey && e.keyCode == 13){
+        if(sendCTRLandEnter && e.ctrlKey && e.keyCode == 13){
             e.preventDefault()
             handleSendMessage()
         }

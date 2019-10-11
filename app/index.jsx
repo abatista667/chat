@@ -6,10 +6,12 @@ import Container from "./components/navigation/Container";
 import {receiveMessage} from './actions/messageActions'
 import '../css/materialize.css'
 import '../css/site.css'
+import { initializeSettings } from "./actions/settingActions";
 
 const App = () => <Provider store={store}><Container /></Provider>
 
 store.dispatch(receiveMessage())
+store.dispatch(initializeSettings())
 
 ReactDOM.render(<App />, 
             document.getElementById("app"))

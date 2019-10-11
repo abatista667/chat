@@ -8,7 +8,8 @@ import {
     INCREMENT_MESSAGE_COUNT,
     SET_THEME,
     SEND_CTRL_AND_ENTER,
-    RESET_DEFAULT_SETTINGS
+    RESET_DEFAULT_SETTINGS,
+    SET_CLOCK_FORMAT
 } from "../constant/actionTypes"
 
 const setRoute = (routes) => {
@@ -49,6 +50,10 @@ const setSendCTRLandEnter = (val) =>{
     return {type: SEND_CTRL_AND_ENTER, payload:val}
 }
 
+const setClock =(val) =>{
+    return {type: SET_CLOCK_FORMAT, payload:val}
+}
+
 export { 
     setRoute, 
     setMenuHeight,
@@ -59,5 +64,6 @@ export {
     incrementMessageCout,
     setTheme,
     setDefaultSettings,
-    setSendCTRLandEnter
+    setSendCTRLandEnter,
+    setClock
  }

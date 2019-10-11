@@ -1,13 +1,8 @@
 import Select from "../common/Select"
 import TextBox from '../common/TextBox'
 import { useSelector, useDispatch } from 'react-redux'
-import {
-    setLanguage,
-    setUsername,
-    setTheme,
-    setSendCTRLandEnter,
-    setDefaultSettings
-} from '../../actions/actionCreators'
+import { handleSettingsChange } from '../../actions/settingActions'
+import { setDefaultSettings } from '../../actions/actionCreators'
 import { themeDark, themeLight } from "../../constant/availableSettings"
 
 const SettingsPage = () => {
@@ -18,13 +13,7 @@ const SettingsPage = () => {
     const username = useSelector(state => state.settings.username)
     const themelightSelected = useSelector(state => state.settings.theme == themeLight)
     const sendCTRLandEnter = useSelector(state => state.settings.sendCTRLandEnter)
-
-    const handleLanguageChange = (event) => dispatch(setLanguage(event.target.value))
-    const handleUsernameChange = (event) => dispatch(setUsername(event.target.value))
-    const handleThemeChange = (event) => dispatch(setTheme(event.target.value))
-    const handleSendCTRLandEnter = (event) => dispatch(setSendCTRLandEnter(event.target.value == "true"))
-
-
+    const _24Clock = useSelector(state => state.settings.clock == 24)
     const height = useSelector(state => state.size.viewHeight)
 
     return <div className="setting-container" style={{ height }}>
@@ -36,7 +25,7 @@ const SettingsPage = () => {
         <div className="row">
             <div className="col s12">
                 <TextBox name="username"
-                    onKeyUp={handleUsernameChange}
+                    onKeyUp={(e) => dispatch(handleSettingsChange(e))}
                     defaultValue={username} />
             </div>
         </div>
@@ -47,9 +36,9 @@ const SettingsPage = () => {
         </div>
         <div className="row">
             <div className="col s12">
-                <input onChange={handleThemeChange} type="radio" checked={themelightSelected}
+                <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" checked={themelightSelected}
                     name="theme" value={themeLight} /> Light
-                 <input onChange={handleThemeChange} type="radio" checked={!themelightSelected}
+                 <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" checked={!themelightSelected}
                     name="theme" value={themeDark} /> Dark
             </div>
         </div>
@@ -60,8 +49,10 @@ const SettingsPage = () => {
         </div>
         <div className="row">
             <div className="col s12">
-                <input type="radio" name="clock" value={12} /> 12 Hour
-                 <input type="radio" name="clock" value={24} /> 24 Hour
+                <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" name="clock"
+                    value={12} checked={!_24Clock} /> 12 Hour
+                 <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" name="clock"
+                    value={24} checked={_24Clock} /> 24 Hour
             </div>
         </div>
         <div className="row">
@@ -71,9 +62,9 @@ const SettingsPage = () => {
         </div>
         <div className="row">
             <div className="col s12">
-                <input onChange={handleSendCTRLandEnter} type="radio" checked={sendCTRLandEnter}
+                <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" checked={sendCTRLandEnter}
                     name="sendCTRLandEnter" value={true} /> On
-                 <input onChange={handleSendCTRLandEnter} type="radio" checked={!sendCTRLandEnter}
+                 <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" checked={!sendCTRLandEnter}
                     name="sendCTRLandEnter" value={false} /> Off
             </div>
         </div>
@@ -89,7 +80,7 @@ const SettingsPage = () => {
                     labelColumn="name"
                     valueColumn="name"
                     selectedValue={language}
-                    onChange={handleLanguageChange}
+                    onChange={(e) => dispatch(handleSettingsChange(e))}
                 />
             </div>
         </div>

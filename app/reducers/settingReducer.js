@@ -3,7 +3,8 @@ import {
     SET_USERNAME,
     SET_THEME,
     RESET_DEFAULT_SETTINGS,
-    SEND_CTRL_AND_ENTER
+    SEND_CTRL_AND_ENTER,
+    SET_CLOCK_FORMAT
 } from "../constant/actionTypes";
 import { defaultSettings } from '../constant/availableSettings'
 
@@ -13,16 +14,19 @@ const settings = (state = {}, action) => {
             state.language = action.payload
             break;
         case SET_USERNAME:
-            state.Username = action.payload
+            state.username = action.payload
             break;
         case SET_THEME:
             state.theme = action.payload
             break;
         case RESET_DEFAULT_SETTINGS:
-            state = {... defaultSettings}
+            state = { ...defaultSettings }
             break;
         case SEND_CTRL_AND_ENTER:
             state.sendCTRLandEnter = action.payload
+            break;
+        case SET_CLOCK_FORMAT:
+            state.clock = action.payload
             break;
     }
     return state;
