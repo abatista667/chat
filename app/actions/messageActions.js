@@ -18,4 +18,9 @@ const receiveMessage = () => {
     }
 }
 
-export { sendMessage, receiveMessage }
+const processMessage = (state =[], message) =>{
+    message.key = state.length +1
+    return state.concat([message])
+}
+
+export { sendMessage, receiveMessage, processMessage }

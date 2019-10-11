@@ -19,7 +19,7 @@ const otherUserMessage = (content, user, time) => {
 }
 
 const Message = ({ isCurrentUser, content, user, time }) => {
-    return <div className="row">
+    return <div className="row row-no-margin-bottom">
         {
             isCurrentUser ?
                 currentUserMessage(content, time)

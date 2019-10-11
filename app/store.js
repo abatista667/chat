@@ -14,7 +14,7 @@ const chatList = [
 ]
 
 const initialState = {
-    chat: chatList,
+    chat: [],
     routes: routes
 }
 

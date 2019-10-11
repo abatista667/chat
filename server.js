@@ -10,7 +10,7 @@ app.get('/', function(req, res){
 });
 
 app.use('/dist',express.static(__dirname + '/dist'));
-app.use('/css',express.static(__dirname + '/css'));
+// app.use('/css',express.static(__dirname + '/css'));
 app.use('/images',express.static(__dirname + '/images'));
 
 io.on('connection', function(socket){

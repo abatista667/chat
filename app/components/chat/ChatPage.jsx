@@ -4,6 +4,7 @@ import Message from './Message'
 import {sendMessage} from '../../actions/messageActions'
 import Textarea from '../common/TextArea'
 
+
 const InputChat = ({ height }) => {
     const [message, setMessage] = useState("")
     const dispatch = useDispatch()
@@ -13,16 +14,24 @@ const InputChat = ({ height }) => {
     }
 
     const handleSendMessage =()=>{
+        if(message)
         dispatch(sendMessage(message, "fulano"))
         setMessage("")
     }
 
-    return <div className="row" style={{ height: height + 'px' }}>
+    const handleKeyDown = (e) => {
+        if(e.ctrlKey && e.keyCode == 13){
+            e.preventDefault()
+            handleSendMessage()
+        }
+    }
+
+    return <div className="row row-no-margin-bottom" style={{ height: height + 'px' }}>
         <div className="col s10">
             <Textarea name="chat-input"
                       onChange={handleMessageChange} 
                       defaultValue={message} 
-                      onEnterPress={handleSendMessage} />
+                      handleKeyDown={handleKeyDown} />
         </div>
         <div className="col s2 fill-height middle-content">
             <img onClick={handleSendMessage} title="Send message"
