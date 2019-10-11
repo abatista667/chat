@@ -11,6 +11,9 @@
 .light {
     background-color: #f9fbe7  
 }
+nav{
+    background-color: #fbc02d 
+}
 
 .dark {
     background-color: #37474f ;
@@ -132,4 +135,8 @@ div.dark input, div.dark select{
 
 select {
     display: block;
+}
+
+#btn-reset{
+    width:100%
 }

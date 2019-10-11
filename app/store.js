@@ -6,7 +6,7 @@ import { defaultSettings } from './constant/availableSettings'
 import { routes } from './constant/availableRoutes'
 
 const initialState = {
-    settings:defaultSettings,
+    settings:{... defaultSettings},
     chat: { list: [], count: 0 },
     routes
 }

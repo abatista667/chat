@@ -6,7 +6,9 @@ import {
     SET_LANGUAGE,
     SET_USERNAME,
     INCREMENT_MESSAGE_COUNT,
-    SET_THEME
+    SET_THEME,
+    SEND_CTRL_AND_ENTER,
+    RESET_DEFAULT_SETTINGS
 } from "../constant/actionTypes"
 
 const setRoute = (routes) => {
@@ -43,6 +45,10 @@ const setDefaultSettings= () =>{
     return {type :RESET_DEFAULT_SETTINGS}
 }
 
+const setSendCTRLandEnter = (val) =>{
+    return {type: SEND_CTRL_AND_ENTER, payload:val}
+}
+
 export { 
     setRoute, 
     setMenuHeight,
@@ -52,5 +58,6 @@ export {
     setUsername,
     incrementMessageCout,
     setTheme,
-    setDefaultSettings
+    setDefaultSettings,
+    setSendCTRLandEnter
  }

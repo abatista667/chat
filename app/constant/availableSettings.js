@@ -12,7 +12,8 @@ const themeLight ="light"
 const defaultSettings = {
     languageList,
     language,
-    theme:themeLight
+    theme:themeLight,
+    sendCTRLandEnter:true
 }
 
 
