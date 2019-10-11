@@ -1,10 +1,13 @@
-import {ADD_MESSAGE} from '../constant/actionTypes'
-import {processMessage} from '../actions/messageActions'
+import { ADD_MESSAGE, INCREMENT_MESSAGE_COUNT } from '../constant/actionTypes'
 
 const chat = (state = [], action) => {
-    switch(action.type){
+    switch (action.type) {
         case ADD_MESSAGE:
-                state = processMessage(state, action.payload)
+            const message = { ...action.payload, key: state.count + 1 }
+            state.list = state.list.concat([message])
+            break;
+        case INCREMENT_MESSAGE_COUNT:
+            state.count += 1
             break;
     }
     return state;

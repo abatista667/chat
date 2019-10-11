@@ -5,7 +5,16 @@
 .container{
     width: 100%;
     max-width: 100% !important;
+
+}
+
+.light {
     background-color: #f9fbe7  
+}
+
+.dark {
+    background-color: #37474f ;
+    color:white  
 }
 
 .chat-msg-list{
@@ -62,6 +71,30 @@ element.style {
     box-shadow: -3px 3px 4px #888888;
 }
 
+div.dark .current-user-msg-container{
+    background-color: #546e7a;
+    box-shadow: -3px 3px 4px black;
+}
+
+div.dark .other-user-msg-container{
+    background-color:#263238;
+    box-shadow: -3px 3px 4px black;
+}
+
+div.dark nav{
+    background-color: #212121 
+}
+
+div.dark #chat-input{
+    background-color: #263238;
+    color:white;
+    border:0px 
+}
+
+div.dark input, div.dark select{
+    color: white; 
+    background-color:#263238  
+}
 
 .other-user-msg-container{
     float: left;
@@ -70,7 +103,7 @@ element.style {
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 3px;
-    padding-right: 3px;
+    padding-right: 20px;
     border-radius: 10px;
     margin-top: 3px;
     margin-left: 10px;

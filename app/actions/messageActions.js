@@ -1,4 +1,4 @@
-import { AddMessage } from '../actions/actionCreators'
+import { addMessage, incrementMessageCout } from '../actions/actionCreators'
 import socketIOClient from "socket.io-client";
 const socket = socketIOClient()
 
@@ -6,21 +6,19 @@ const sendMessage = (content, user) => {
     const date = new Date()
     socket.emit("chat message", { content, user, date})
     return (dispatch) => {
-        dispatch(AddMessage({content, user, date, isCurrentUser:true}))
+        dispatch(addMessage({content, user, date, isCurrentUser:true}))
+        dispatch(incrementMessageCout())
     }
 
 }
 const receiveMessage = () => {
     return (dispatch) => {
         socket.on('chat message', function (message) {
-            dispatch(AddMessage({... message, isCurrentUser:false}))
+            dispatch(addMessage({... message, isCurrentUser:false}))
+            dispatch(incrementMessageCout())
         });
     }
 }
 
-const processMessage = (state =[], message) =>{
-    message.key = state.length +1
-    return state.concat([message])
-}
 
-export { sendMessage, receiveMessage, processMessage }
+export { sendMessage, receiveMessage }

@@ -2,20 +2,13 @@ import { createStore, applyMiddleware } from 'redux'
 import { logger } from 'redux-logger'
 import thunk from 'redux-thunk'
 import mainReducer from './reducers/mainReducer'
-
-const routes = [
-    { key: 2, selected: true, path: '/chat', title: 'Chat' },
-    { key: 1, selected: false, path: '/settings', title: 'Settings' },
-]
-
-const chatList = [
-    {isCurrentUser:false, content:"hola como estas", user:"Fulano", time:new Date()},
-    {isCurrentUser:true, content:"bien", user:"", time:new Date()},
-]
+import { defaultSettings } from './constant/availableSettings'
+import { routes } from './constant/availableRoutes'
 
 const initialState = {
-    chat: [],
-    routes: routes
+    settings:defaultSettings,
+    chat: { list: [], count: 0 },
+    routes
 }
 
 const store = createStore(mainReducer, initialState,

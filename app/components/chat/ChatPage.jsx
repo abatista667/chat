@@ -42,7 +42,7 @@ const InputChat = ({ height }) => {
 }
 
 const MessageArea = ({ height }) => {
-    const messageList = useSelector(state => state.chat)
+    const messageList = useSelector(state => state.chat.list)
     const chatlistRef = useRef()
 
     useEffect(() => {
@@ -62,7 +62,7 @@ const ChatPage = () => {
     const inputHeight = 40;
 
     return <div className="chatPage">
-        <MessageArea height={height - inputHeight - 1} />
+        <MessageArea height={height - inputHeight} />
         <InputChat height={inputHeight} />
     </div>
 }
