@@ -11,7 +11,8 @@ import {
     CLOCK,
     SEND_WITH_CTRL_AND_ENTER
 } from "../constant/availableSettings"
-import { themeDark, themeLight } from "../constant/availableSettings"
+import {  themeLight } from "../constant/availableSettings"
+import {notifyConnection} from './messageActions'
 
 const handleSettingsChange = (event) => {
     return (dispatch) => {
@@ -56,6 +57,7 @@ const loadSettings = () => {
 
 const initializeSettings = () => {
     const settings = loadSettings()
+    notifyConnection(settings.username)
     return (dispatch) => {
         dispatch(setUsername(settings.username))
         dispatch(setTheme(settings.theme))

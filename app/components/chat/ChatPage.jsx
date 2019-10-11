@@ -16,7 +16,7 @@ const InputChat = ({ height }) => {
 
     const handleSendMessage =()=>{
         if(message)
-        dispatch(sendMessage(message, "fulano"))
+        dispatch(sendMessage(message))
         setMessage("")
     }
 

@@ -21,6 +21,13 @@ io.on('connection', function(socket){
     
     socket.broadcast.emit('chat message', msg);
   });
+
+  
+  socket.on('login', function(msg){
+    console.log(msg)
+    
+    socket.broadcast.emit('login', msg);
+  });
 });
 
 http.listen(port, function(){

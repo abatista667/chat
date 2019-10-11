@@ -3,7 +3,7 @@ import * as React from 'react'
 import store from './store'
 import { Provider } from 'react-redux'
 import Container from "./components/navigation/Container";
-import {receiveMessage} from './actions/messageActions'
+import {receiveMessage, notifyConnection} from './actions/messageActions'
 import '../css/materialize.css'
 import '../css/site.css'
 import { initializeSettings } from "./actions/settingActions";
