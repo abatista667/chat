@@ -153,4 +153,15 @@ select {
     padding-right: 3px;
     border-radius: 10px;
     margin-right: 10px;
+    font-size: small;
+}
+
+.other-user-label, .user-login-notification{
+    font-size: small;
+    margin-left: 10px;
+}
+
+.label .other-user-msg-container, 
+.label .current-user-msg-container {
+margin-top: 0px;
 }
