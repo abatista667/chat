@@ -9,7 +9,9 @@ import {
     SET_THEME,
     SEND_CTRL_AND_ENTER,
     RESET_DEFAULT_SETTINGS,
-    SET_CLOCK_FORMAT
+    SET_CLOCK_FORMAT,
+    SET_LAST_SENDER,
+    ADD_USER_NOTIFICATION
 } from "../constant/actionTypes"
 
 const setRoute = (routes) => {
@@ -54,6 +56,14 @@ const setClock =(val) =>{
     return {type: SET_CLOCK_FORMAT, payload:val}
 }
 
+const setLastSender =(val) =>{
+    return {type: SET_LAST_SENDER, payload:val}
+}
+
+const addUserNotification =(val) =>{
+    return {type: ADD_USER_NOTIFICATION, payload:val}
+}
+
 export { 
     setRoute, 
     setMenuHeight,
@@ -65,5 +75,7 @@ export {
     setTheme,
     setDefaultSettings,
     setSendCTRLandEnter,
-    setClock
+    setClock,
+    setLastSender,
+    addUserNotification
  }

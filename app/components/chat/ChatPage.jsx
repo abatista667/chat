@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { useRef, useEffect, useState } from 'react'
-import Message from './Message'
+import Message, {UserLoginNotification} from './Message'
 import {sendMessage} from '../../actions/messageActions'
 import Textarea from '../common/TextArea'
+import { ADD_MESSAGE, ADD_USER_NOTIFICATION } from '../../constant/actionTypes'
 
 
 const InputChat = ({ height }) => {
@@ -43,7 +44,7 @@ const InputChat = ({ height }) => {
 }
 
 const MessageArea = ({ height }) => {
-    const messageList = useSelector(state => state.chat.list)
+    const itemList = useSelector(state => state.chat.list)
     const chatlistRef = useRef()
 
     useEffect(() => {
@@ -52,10 +53,19 @@ const MessageArea = ({ height }) => {
 
     return (
         <div  className="chat-msg-list" style={{ height: height + 'px' }}>
-            {messageList.map(message => <Message {...message} />)}
+            {itemList.map(renderItem)}
             <div ref={chatlistRef}></div>
         </div>
     )
+}
+
+const renderItem =(item) =>{
+    switch(item.type){
+        case ADD_MESSAGE:
+            return <Message {...item} />;
+        case ADD_USER_NOTIFICATION:
+            return <UserLoginNotification {...item}/>
+    }
 }
 
 const ChatPage = () => {

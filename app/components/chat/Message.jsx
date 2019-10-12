@@ -28,4 +28,10 @@ const Message = ({ isCurrentUser, content, user, time }) => {
     </div>
 }
 
+const UserLoginNotification =({username})=>
+{
+    return<div className="user-login-notification">{username} has join</div>
+}
+
 export default Message
+export {UserLoginNotification}
