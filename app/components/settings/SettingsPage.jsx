@@ -38,7 +38,7 @@ const SettingsPage = () => {
                 <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" checked={themelightSelected}
                     name="theme" value={themeLight} /> Light
                  <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" checked={!themelightSelected}
-                    name="theme" value={themeDark} /> Dark
+                    name="theme" value={themeDark} className="margin-left-10" /> Dark
             </div>
         </div>
         <div className="row">
@@ -51,7 +51,7 @@ const SettingsPage = () => {
                 <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" name="clock"
                     value={12} checked={!_24Clock} /> 12 Hour
                  <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" name="clock"
-                    value={24} checked={_24Clock} /> 24 Hour
+                    value={24} checked={_24Clock} className="margin-left-10" /> 24 Hour
             </div>
         </div>
         <div className="row">
@@ -64,7 +64,7 @@ const SettingsPage = () => {
                 <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" checked={sendCTRLandEnter}
                     name="sendCTRLandEnter" value={true} /> On
                  <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" checked={!sendCTRLandEnter}
-                    name="sendCTRLandEnter" value={false} /> Off
+                    name="sendCTRLandEnter" value={false} className="margin-left-10"/> Off
             </div>
         </div>
         <div className="row">

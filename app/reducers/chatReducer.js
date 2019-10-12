@@ -17,7 +17,11 @@ const chat = (state = [], action) => {
         case SET_LAST_SENDER:
             if (state.lastSender != action.payload) {
                 state.lastSender = action.payload
-                const lastSender = { type: SET_LAST_SENDER, user: action.payload }
+                const lastSender = { 
+                    type: SET_LAST_SENDER, 
+                    key:state.count + 1, 
+                    user: action.payload 
+                }
                 state.list = [...state.list, lastSender]
             }
             break;
