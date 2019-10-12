@@ -143,3 +143,14 @@ select {
 #btn-reset{
     width:100%
 }
+
+
+.current-user-label{
+    float: right;
+    display: inline-flex;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 3px;
+    border-radius: 10px;
+    margin-right: 10px;
+}

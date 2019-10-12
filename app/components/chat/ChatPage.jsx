@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { useRef, useEffect, useState } from 'react'
-import Message, {UserLoginNotification} from './Message'
+import Message, {UserLoginNotification, UserLabel} from './Message'
 import {sendMessage} from '../../actions/messageActions'
 import Textarea from '../common/TextArea'
-import { ADD_MESSAGE, ADD_USER_NOTIFICATION } from '../../constant/actionTypes'
+import { ADD_MESSAGE, ADD_USER_NOTIFICATION, SET_LAST_SENDER } from '../../constant/actionTypes'
 
 
 const InputChat = ({ height }) => {
@@ -65,6 +65,8 @@ const renderItem =(item) =>{
             return <Message {...item} />;
         case ADD_USER_NOTIFICATION:
             return <UserLoginNotification {...item}/>
+        case SET_LAST_SENDER:
+            return <UserLabel {...item} />
     }
 }
 
