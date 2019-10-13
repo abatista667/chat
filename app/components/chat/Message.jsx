@@ -34,13 +34,15 @@ const Message = ({ isCurrentUser, content, date }) => {
 }
 
 const UserLoginNotification = ({ username }) => {
-    return <div className="user-login-notification">{username} has joined</div>
+    const interfaceLanguage = useSelector(state => state.settings.interfaceLanguage)
+    return <div className="user-login-notification">{username} {interfaceLanguage.joined}</div>
 }
 
 const UserLabel = ({ user }) => {
+    const interfaceLanguage = useSelector(state => state.settings.interfaceLanguage)
     return <div className="row row-no-margin-bottom label">
         {user == ME
-            ? <div className="current-user-label">{user}</div>
+            ? <div className="current-user-label">{interfaceLanguage.me}</div>
             : <div className="other-user-label">{user}</div>}
     </div>
 }

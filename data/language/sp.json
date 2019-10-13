@@ -1,0 +1,19 @@
+{
+    "chat": "Chatear",
+    "settings": "Opciones",
+    "username": "Nombre de usuario",
+    "interface": "Interfaz",
+    "dark": "Oscuro",
+    "light": "Claro",
+    "clock": "Tipo de Reloj",
+    "_24": "24 Horas",
+    "_12": "12 Horas",
+    "ctrlEnter": "enviar con CTRL + ENTER",
+    "on": "Encendido",
+    "off": "Apagado",
+    "language": "Lenguaje",
+    "btnReset": "Reestablecer",
+    "joined": "se ha unido",
+    "send": "Enviar mensaje",
+    "me": "Yo:"
+}

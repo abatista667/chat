@@ -9,6 +9,7 @@ import { useRef, useLayoutEffect } from 'react'
 const Menu = ({ history }) => {
     const dispatch = useDispatch();
     const routes = useSelector(state => state.routes)
+    const interfaceLanguage = useSelector(state => state.settings.interfaceLanguage)
 
     const handleSelect = (item) => {
         history.push(item.path)
@@ -22,11 +23,11 @@ const Menu = ({ history }) => {
     })
     return (
         <nav ref={navRef}>
-
             <div className="nav-wrapper">
                 <ul>
                     {routes.map(item => {
-                        return <MenuItem {...item} onSelect={handleSelect} />
+                        const title = interfaceLanguage[item.title]
+                        return <MenuItem {...item} title={title} onSelect={handleSelect} />
                     })}
                 </ul>
             </div>

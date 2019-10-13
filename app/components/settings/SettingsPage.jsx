@@ -14,11 +14,12 @@ const SettingsPage = () => {
     const sendCTRLandEnter = useSelector(state => state.settings.sendCTRLandEnter)
     const _24Clock = useSelector(state => state.settings.clock == 24)
     const height = useSelector(state => state.size.viewHeight)
+    const interfaceLanguage = useSelector(state => state.settings.interfaceLanguage)
 
     return <div className="setting-container" style={{ height }}>
         <div className="row">
             <div className="col s12">
-                Username
+                {interfaceLanguage.username}
             </div>
         </div>
         <div className="row">
@@ -30,46 +31,47 @@ const SettingsPage = () => {
         </div>
         <div className="row">
             <div className="col s12">
-                Interface color
+                {interfaceLanguage.interface}
             </div>
         </div>
         <div className="row">
             <div className="col s12">
                 <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" checked={themelightSelected}
-                    name="theme" value={themeLight} /> Light
-                 <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" checked={!themelightSelected}
-                    name="theme" value={themeDark} className="margin-left-10" /> Dark
+                    name="theme" value={themeLight} /> {interfaceLanguage.light}
+
+                <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" checked={!themelightSelected}
+                    name="theme" value={themeDark} className="margin-left-10" /> {interfaceLanguage.dark}
             </div>
         </div>
         <div className="row">
             <div className="col s12">
-                Clock display
+            {interfaceLanguage.clock}
             </div>
         </div>
         <div className="row">
             <div className="col s12">
                 <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" name="clock"
-                    value={12} checked={!_24Clock} /> 12 Hour
+                    value={12} checked={!_24Clock} /> {interfaceLanguage._12}
                  <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" name="clock"
-                    value={24} checked={_24Clock} className="margin-left-10" /> 24 Hour
+                    value={24} checked={_24Clock} className="margin-left-10" /> {interfaceLanguage._24}
             </div>
         </div>
         <div className="row">
             <div className="col s12">
-                Send message on CTRL + ENTER
+            {interfaceLanguage.ctrlEnter}
             </div>
         </div>
         <div className="row">
             <div className="col s12">
                 <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" checked={sendCTRLandEnter}
-                    name="sendCTRLandEnter" value={true} /> On
+                    name="sendCTRLandEnter" value={true} /> {interfaceLanguage.on}
                  <input onChange={(e) => dispatch(handleSettingsChange(e))} type="radio" checked={!sendCTRLandEnter}
-                    name="sendCTRLandEnter" value={false} className="margin-left-10"/> Off
+                    name="sendCTRLandEnter" value={false} className="margin-left-10" /> {interfaceLanguage.off}
             </div>
         </div>
         <div className="row">
             <div className="col s12">
-                Language
+            {interfaceLanguage.language}
             </div>
         </div>
         <div className="row">
@@ -77,7 +79,7 @@ const SettingsPage = () => {
                 <Select name="language"
                     data={languageList}
                     labelColumn="name"
-                    valueColumn="name"
+                    valueColumn="value"
                     selectedValue={language}
                     onChange={(e) => dispatch(handleSettingsChange(e))}
                 />
@@ -86,7 +88,7 @@ const SettingsPage = () => {
         <div className="row">
             <div className="col s12">
                 <button onClick={() => dispatch(clearSettings())} id="btn-reset"
-                    className="btn">Reset to default</button>
+                    className="btn"> {interfaceLanguage.btnReset}</button>
             </div>
         </div>
     </div>

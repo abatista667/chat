@@ -1,7 +1,6 @@
-
 const routes = [
-    { key: 2, selected: true, path: '/chat', title: 'Chat' },
-    { key: 1, selected: false, path: '/settings', title: 'Settings' },
+    { key: 2, selected: true, path: '/chat', title: 'chat' },
+    { key: 1, selected: false, path: '/settings', title: 'settings' },
 ]
 
-export {routes}
+export { routes }

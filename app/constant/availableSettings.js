@@ -1,26 +1,30 @@
-const ENGLISH = "English"
-
 const languageList = [
-    {name:ENGLISH}
+    { name: "English", value: "en" },
+    { name: "Español", value: "sp" },
 ]
 
-const language = ENGLISH
+const USERNAME = "username"
+const THEME = "theme"
+const CLOCK = "clock"
+const SEND_WITH_CTRL_AND_ENTER = "sendCTRLandEnter"
+const LANGUAGE_TAG = "language"
+const defaultLanguageValue = "en"
 
-const themeDark ="dark"
-const themeLight ="light"
+const language = defaultLanguageValue
+
+const themeDark = "dark"
+const themeLight = "light"
 
 const defaultSettings = {
     languageList,
     language,
-    theme:themeLight,
-    sendCTRLandEnter:true,
-    clock:24
+    theme: themeLight,
+    sendCTRLandEnter: true,
+    clock: 24,
+    interfaceLanguage: {}
 }
 
-const USERNAME = "username"
-const THEME ="theme"
-const CLOCK="clock"
-const SEND_WITH_CTRL_AND_ENTER="sendCTRLandEnter"
+
 
 export {
     defaultSettings,
@@ -29,5 +33,7 @@ export {
     USERNAME,
     THEME,
     CLOCK,
-    SEND_WITH_CTRL_AND_ENTER
+    SEND_WITH_CTRL_AND_ENTER,
+    LANGUAGE_TAG,
+    defaultLanguageValue
 }

@@ -4,7 +4,8 @@ import {
     SET_THEME,
     RESET_DEFAULT_SETTINGS,
     SEND_CTRL_AND_ENTER,
-    SET_CLOCK_FORMAT
+    SET_CLOCK_FORMAT,
+    SET_INTERFACE_LANGUAGE
 } from "../constant/actionTypes";
 import { defaultSettings } from '../constant/availableSettings'
 
@@ -20,13 +21,16 @@ const settings = (state = {}, action) => {
             state.theme = action.payload
             break;
         case RESET_DEFAULT_SETTINGS:
-            state = { ...defaultSettings }
+            state = {...defaultSettings }
             break;
         case SEND_CTRL_AND_ENTER:
             state.sendCTRLandEnter = action.payload
             break;
         case SET_CLOCK_FORMAT:
             state.clock = action.payload
+            break;
+        case SET_INTERFACE_LANGUAGE:
+            state.interfaceLanguage = action.payload
             break;
     }
     return state;

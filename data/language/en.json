@@ -1,0 +1,19 @@
+{
+    "chat": "Chat",
+    "settings": "Settings",
+    "username": "Username",
+    "interface": "Interface color",
+    "dark": "Dark",
+    "light": "Light",
+    "clock": "Clock display",
+    "_24": "24 Hour",
+    "_12": "12 Hour",
+    "ctrlEnter": "Send message on CTRL + ENTER",
+    "on": "On",
+    "off": "Off",
+    "language": "Language",
+    "btnReset": "Reset to default",
+    "joined": "has joined",
+    "send": "Send message",
+    "me": "Me:"
+}

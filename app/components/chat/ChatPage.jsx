@@ -10,7 +10,8 @@ const InputChat = ({ height }) => {
     const [message, setMessage] = useState("")
     const dispatch = useDispatch()
     const sendCTRLandEnter = useSelector(state => state.settings.sendCTRLandEnter)
-
+    const interfaceLanguage = useSelector(state => state.settings.interfaceLanguage)
+    
     const handleMessageChange = (event) =>{
         setMessage(event.target.value)
     }
@@ -36,7 +37,7 @@ const InputChat = ({ height }) => {
                       handleKeyDown={handleKeyDown} />
         </div>
         <div className="col s2 fill-height middle-content">
-            <img onClick={handleSendMessage} title="Send message"
+            <img onClick={handleSendMessage} title={interfaceLanguage.send}
                  className="send-button" src="images/send-button.png" />
         </div>
     </div>
