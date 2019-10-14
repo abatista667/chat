@@ -38,7 +38,6 @@ https://abatista-chat.herokuapp.com/
     <li>Babel</li>
     <li>Webpack</li>
     <li>Sass</li>
-     <li>materialize style sheet</li>
 </ul>
 
 note: the architecture is completely functional using react hooks
@@ -75,3 +74,7 @@ note: the architecture is completely functional using react hooks
 /images: contains images
 
 /data: contains json data
+
+
+<h3>My Limitations</h3>
+I'm woring on a 13inch laptop with not additional monitor, i couldn't test this app in XL resolution.
