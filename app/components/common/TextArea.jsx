@@ -1,6 +1,16 @@
 import React, {useState, useEffect} from 'react'
 
+//display a controlled TextArea component
 const TextArea = ({defaultValue, name, onChange, placeholder, style, className, handleKeyDown}) =>{
+    /*
+    defaultValue: the props with the value
+    name: string the name and id of the html component
+    onchange: onchange event callback
+    placeholder:html textarea attribute
+    style: object jsx atribute
+    classname:classname
+    handleKeyDown: keydown event callback
+    */ 
     const [value, setValue] = useState(defaultValue)
 
     const handleChange = (e) => {

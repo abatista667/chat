@@ -1,6 +1,16 @@
 import React, {useState, useEffect} from 'react'
 
+//display a controlled input[type=text]
 const TextBox = ({defaultValue, name, onKeyUp, placeholder, onBlur, onChange, readOnly=false}) =>{
+        /*
+    defaultValue: the props with the value
+    name: string the name and id of the html component
+    onKeyUp: keyup event callback
+    placeholder:html textarea attribute
+    onBlur: blur event callback
+    onchange: onchange event callback
+    readonly:boolean 
+    */ 
     const [value, setValue] = useState(defaultValue|| '')
 
     const handleKeyDown =(ev) =>{
