@@ -146,6 +146,10 @@ div.dark select {
 .setting-container {
     max-width: 400px;
 }
+.setting-page{
+    width:100%;
+    overflow-y: auto;
+}
 
 select {
     display: block;
