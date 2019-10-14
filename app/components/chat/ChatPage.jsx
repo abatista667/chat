@@ -32,6 +32,7 @@ const InputChat = ({ height }) => {
     return <div className="row row-no-margin-bottom" style={{ height: height + 'px' }}>
         <div className="col s10">
             <Textarea name="chat-input"
+                      placeholder={interfaceLanguage.enterMessage}
                       onChange={handleMessageChange} 
                       defaultValue={message} 
                       handleKeyDown={handleKeyDown} />

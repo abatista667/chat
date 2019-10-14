@@ -15,5 +15,6 @@
     "btnReset": "Reset to default",
     "joined": "has joined",
     "send": "Send message",
-    "me": "Me:"
+    "me": "Me:",
+    "enterMessage":"Enter message"
 }

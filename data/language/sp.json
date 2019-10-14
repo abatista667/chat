@@ -15,5 +15,6 @@
     "btnReset": "Reestablecer",
     "joined": "se ha unido",
     "send": "Enviar mensaje",
-    "me": "Yo:"
+    "me": "Yo:",
+    "enterMessage":"Escriba el mensaje"
 }
