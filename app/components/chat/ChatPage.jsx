@@ -11,14 +11,15 @@ const InputChat = ({ height }) => {
     const dispatch = useDispatch()
     const sendCTRLandEnter = useSelector(state => state.settings.sendCTRLandEnter)
     const interfaceLanguage = useSelector(state => state.settings.interfaceLanguage)
-    
+    const username = useSelector(state => state.settings.username)
+
     const handleMessageChange = (event) =>{
         setMessage(event.target.value)
     }
 
     const handleSendMessage =()=>{
         if(message)
-        dispatch(sendMessage(message))
+        dispatch(sendMessage(message, username))
         setMessage("")
     }
 

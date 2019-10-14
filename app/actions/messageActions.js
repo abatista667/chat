@@ -14,9 +14,8 @@ const socket = socketIOClient()
 //send a message using the connected socket
 //dispatch the current user as the last message sender
 //add the message to the chat item list
-const sendMessage = (content) => {
+const sendMessage = (content, user) => {
     const date = new Date()
-    const user = localStorage[USERNAME]
     socket.emit("chat message", { content, user, date })
     return (dispatch) => {
         dispatch(setLastSender(ME))
