@@ -1,3 +1,5 @@
+//this file contains contants value with all availible settings
+//and the default settings
 const languageList = [
     { name: "English", value: "en" },
     { name: "Español", value: "sp" },

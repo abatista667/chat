@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { handleSettingsChange, clearSettings } from '../../actions/settingActions'
 import { themeDark, themeLight } from "../../constant/availableSettings"
 
+//display the settings page
 const SettingsPage = () => {
     const dispatch = useDispatch();
 

@@ -5,17 +5,16 @@ const readFromLocalStorage = (key, defaultValue = "") => {
     return localStorage[key] || defaultValue
 }
 
-//write async on the local storage if success return true
-//if fail return false
+//write async on the local storage return a promise
 const writeOnLocalStorage = (key, value) => {
     return new Promise((resolve, reject) => {
         if (!localStorage) {
-            reject(false)
+            reject()
             return;
         }
         try {
             localStorage.setItem(key, value)
-            resolve(true)
+            resolve()
         } catch (err) {
             console.log("There was an error while saving in the local storage")
             console.log(err)

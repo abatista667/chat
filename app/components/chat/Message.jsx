@@ -2,6 +2,7 @@ import { ME } from "../../constant/messageConst"
 import {useSelector} from 'react-redux'
 import { format24Hour, format12Hour } from "../../utils/dateUtils"
 
+//display current user message
 const currentUserMessage = (content, time) => {
     const use24DateFormat = useSelector(state => state.settings.clock == 24)
 
@@ -13,6 +14,7 @@ const currentUserMessage = (content, time) => {
 
 }
 
+//display others user messages
 const otherUserMessage = (content, time) => {
     const use24DateFormat = useSelector(state => state.settings.clock == 24)
 
@@ -23,6 +25,7 @@ const otherUserMessage = (content, time) => {
     </div>
 }
 
+//switch between current user message and others
 const Message = ({ isCurrentUser, content, date }) => {
     return <div className="row row-no-margin-bottom">
         {
@@ -33,11 +36,13 @@ const Message = ({ isCurrentUser, content, date }) => {
     </div>
 }
 
+//display others users joining notification
 const UserLoginNotification = ({ username }) => {
     const interfaceLanguage = useSelector(state => state.settings.interfaceLanguage)
     return <div className="user-login-notification">{username} {interfaceLanguage.joined}</div>
 }
 
+//display the username from message below it
 const UserLabel = ({ user }) => {
     const interfaceLanguage = useSelector(state => state.settings.interfaceLanguage)
     return <div className="row row-no-margin-bottom label">

@@ -19,6 +19,10 @@ it("format 24 hour should return the hour and minute with 24hh:mm format", () =>
     const date2 = new Date(2019, 1, 1, 16, 30, 20)
     const expected2 = "16:30"
     expect(format24Hour(date2)).toBe(expected2)
+
+    const date3 = new Date("none")
+    const expected3 = ""
+    expect(format24Hour(date3)).toBe(expected3)
 })
 
 it("format 12 hour should return the hour and minute with 12hh:mm tt format", () => {
@@ -41,4 +45,8 @@ it("format 12 hour should return the hour and minute with 12hh:mm tt format", ()
     const date5 = new Date(2019, 1, 1, 0, 30, 20)
     const expected5 = "00:30 AM"
     expect(format12Hour(date5)).toBe(expected5)
+
+    const date6 = new Date("none")
+    const expected6 = ""
+    expect(format24Hour(date6)).toBe(expected6)
 })

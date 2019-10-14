@@ -9,6 +9,7 @@ import {
 } from "../constant/actionTypes";
 import { defaultSettings } from '../constant/availableSettings'
 
+//the settings reducer, app settings in the redux store
 const settings = (state = {}, action) => {
     switch (action.type) {
         case SET_LANGUAGE:

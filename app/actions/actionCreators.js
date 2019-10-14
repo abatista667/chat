@@ -1,3 +1,5 @@
+//this file contains the methods for creating redux actions
+//each method return an action with type and payload properties
 import {
     SET_ROUTE,
     SET_MENU_HEIGHT,

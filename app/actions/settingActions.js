@@ -4,7 +4,6 @@ import {
     setSendCTRLandEnter,
     setClock,
     setDefaultSettings,
-    setInterfaceLanguage,
     setLanguage
 } from './actionCreators'
 import {
@@ -20,6 +19,7 @@ import { notifyConnection } from './messageActions'
 import { readFromLocalStorage, writeOnLocalStorage } from '../utils/storageUtils'
 import { loadLanguage } from './languageActions'
 
+//even handler for all different inputs in settings
 const handleSettingsChange = (event) => {
     return (dispatch) => {
         switch (event.target.name) {
@@ -47,6 +47,8 @@ const handleSettingsChange = (event) => {
     }
 }
 
+//read the settings form the localStorage
+//if key is missing return the defaut value
 const loadSettings = () => {
     return {
         username: readFromLocalStorage(USERNAME, "anonymous" + new Date().getMilliseconds()),
@@ -57,7 +59,8 @@ const loadSettings = () => {
     }
 }
 
-
+//load settins from localStorage
+//set them in the redux store
 const initializeSettings = () => {
     const settings = loadSettings()
     notifyConnection(settings.username)
@@ -70,7 +73,8 @@ const initializeSettings = () => {
         dispatch(loadLanguage(settings.language))
     }
 }
-
+//clear the localStorage
+//clear the settings in redux store
 const clearSettings = () => {
     if (localStorage)
         localStorage.clear()

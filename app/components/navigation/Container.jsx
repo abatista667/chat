@@ -5,9 +5,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useLayoutEffect } from 'react'
 import { setViewHeight } from '../../actions/actionCreators'
 import useWindowSize from '../../hooks/useWindowsSize';
-import { themeLight } from '../../constant/availableSettings'
 
-
+//display the application, render the menu and the view parts
+//handle resizing logic
+//handle theme changes
+//all visible area is inside the container div
 const Container = () => {
     const menuHeight = useSelector(state => state.size.menuHeight)
     const dispatch = useDispatch()

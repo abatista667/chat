@@ -5,7 +5,7 @@ import {sendMessage} from '../../actions/messageActions'
 import Textarea from '../common/TextArea'
 import { ADD_MESSAGE, ADD_USER_NOTIFICATION, SET_LAST_SENDER } from '../../constant/actionTypes'
 
-
+//display the input message area
 const InputChat = ({ height }) => {
     const [message, setMessage] = useState("")
     const dispatch = useDispatch()
@@ -44,6 +44,7 @@ const InputChat = ({ height }) => {
 
 }
 
+//display the message and notifications area
 const MessageArea = ({ height }) => {
     const itemList = useSelector(state => state.chat.list)
     const chatlistRef = useRef()
@@ -59,7 +60,7 @@ const MessageArea = ({ height }) => {
         </div>
     )
 }
-
+//switch between the different item type for rendering
 const renderItem =(item) =>{
     switch(item.type){
         case ADD_MESSAGE:
@@ -70,7 +71,8 @@ const renderItem =(item) =>{
             return <UserLabel {...item} />
     }
 }
-
+//render the message area
+//and the input chat as a single page
 const ChatPage = () => {
     const height = useSelector(state => state.size.viewHeight)
     const inputHeight = 40;

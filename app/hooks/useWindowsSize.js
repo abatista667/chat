@@ -1,5 +1,6 @@
 import {useState, useLayoutEffect} from 'react'
 
+//custom hooks that return the windows width and height each time it changes
 function useWindowSize() {
     let [size, setSize] = useState([0, 0]);
     useLayoutEffect(() => {

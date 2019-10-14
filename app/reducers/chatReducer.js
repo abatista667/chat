@@ -5,6 +5,7 @@ import {
     ADD_USER_NOTIFICATION
 } from '../constant/actionTypes'
 
+//chat reducer, take the actions that affect the chat display area
 const chat = (state = [], action) => {
     switch (action.type) {
         case ADD_MESSAGE:
