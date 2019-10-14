@@ -18,6 +18,7 @@ const themeDark = "dark"
 const themeLight = "light"
 
 const defaultSettings = {
+    username:"anonymous" + new Date().getMilliseconds(),
     languageList,
     language,
     theme: themeLight,
@@ -37,5 +38,5 @@ export {
     CLOCK,
     SEND_WITH_CTRL_AND_ENTER,
     LANGUAGE_TAG,
-    defaultLanguageValue
+    defaultLanguageValue,
 }
