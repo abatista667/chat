@@ -9,7 +9,7 @@ Step to run
     <li>Install dependencies: npm i</li>
     <li>Build: npm run build</li>
     <li>Run: npm start</li>
-<ol>
+</ol>
 
 Go to: http://localhost:3000/
 
@@ -27,7 +27,7 @@ https://abatista-chat.herokuapp.com/
     <li>English and Spanish interface language</li>
     <li>Turn on and off Send message on CTRL + ENTER</li>
     <li>Reset to default</li>
-<ul>
+</ul>
 
 <h3>Main dependencies</h3>
 
