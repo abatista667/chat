@@ -77,8 +77,8 @@ note: the architecture is completely functional using react hooks
 
 
 <h3>My Limitations</h3>
-I'm woring on a 13inch laptop with not additional monitor, i couldn't test this app in XL resolution.
+<p>I'm working on a 13inch laptop with not additional monitor, i couldn't test this app in XL resolution.</p>
 
 
-<i>We have a time machine that can predict the future, it's called planning.</i>
-Ariel Batista
+<p><i>We have a time machine that can predict the future, it's called planning.</i>
+<br />Ariel Batista</p>
