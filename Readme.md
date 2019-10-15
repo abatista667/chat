@@ -83,6 +83,6 @@ note: the architecture is completely functional using react hooks
 <p><i>We have a time machine that can predict the future, it's called planning.</i>
 <br />Ariel Batista</p>
 
-<p>Nothing is impossible for someone who has decided to triumph.
+<p><i>Nothing is impossible for someone who has decided to triumph.<i>
 <br />Ariel Batista</p>
 
