@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useLayoutEffect } from 'react'
 import { setViewHeight } from '../../actions/actionCreators'
 import useWindowSize from '../../hooks/useWindowsSize';
+import Loading from './Loading'
 
 //display the application, render the menu and the view parts
 //handle resizing logic
@@ -16,22 +17,28 @@ const Container = () => {
     const oldViewHeight = useSelector(state => state.size.viewHeight)
     const [width, windowHeight] = useWindowSize()
     const theme = useSelector(state => state.settings.theme)
+    const showLoading = useSelector(state => state.loading)
 
     useLayoutEffect(() => {
         console.log(window.innerHeight)
         const viewHeight = windowHeight - menuHeight
 
-        if(oldViewHeight != viewHeight && !isNaN(viewHeight))
-        dispatch(setViewHeight(viewHeight))
+        if (oldViewHeight != viewHeight && !isNaN(viewHeight))
+            dispatch(setViewHeight(viewHeight))
 
     })
-       const css = "container "+theme
+    const css = "container " + theme
     return (
-        <HashRouter>
-            <div className={css}>
-                <Menu />
-                <Views />
-            </div>
+        <HashRouter>{
+            showLoading ?
+                <Loading />
+                :
+                <div className={css}>
+                    <Menu />
+                    <Views />
+                </div>
+        }
+
 
         </HashRouter>
     )

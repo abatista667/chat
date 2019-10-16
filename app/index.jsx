@@ -8,7 +8,7 @@ import '../css/materialize.scss'
 import '../css/site.scss'
 import { initializeSettings } from "./actions/settingActions";
 
-const App = () => <Provider store={store}><Container /></Provider>
+const App = () => <Provider store={store}><Container /></Provider> 
 
 //Initialize the socket connection to the chat server
 store.dispatch(socketEventHandler())

@@ -14,7 +14,8 @@ import {
     SET_CLOCK_FORMAT,
     SET_LAST_SENDER,
     ADD_USER_NOTIFICATION,
-    SET_INTERFACE_LANGUAGE
+    SET_INTERFACE_LANGUAGE,
+    SET_LOADING
 } from "../constant/actionTypes"
 
 const setRoute = (routes) => {
@@ -71,6 +72,9 @@ const setInterfaceLanguage = (language) => {
     return { type: SET_INTERFACE_LANGUAGE, payload: language }
 }
 
+const setLoading = (val) => {
+    return { type: SET_LOADING, payload: val }
+}
 export {
     setRoute,
     setMenuHeight,
@@ -85,5 +89,6 @@ export {
     setClock,
     setLastSender,
     addUserNotification,
-    setInterfaceLanguage
+    setInterfaceLanguage,
+    setLoading
 }
