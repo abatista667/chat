@@ -34,7 +34,7 @@
     "jasmine-enzyme": "^7.1.1",
     "jest": "^24.8.0",
     "jest-enzyme": "^7.1.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^8.0.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "^1.0.0",
